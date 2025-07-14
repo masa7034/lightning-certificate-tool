@@ -1,0 +1,513 @@
+/* 防犯機器 修理不能証明書作成ツール - スタイルシート */
+
+/* リセット・基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* コンテナ・レイアウト */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダー */
+.header {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.header .subtitle {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* メインコンテンツ */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* フォームセクション */
+.form-section {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* フォームグループ */
+.form-group {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 6px;
+    border-left: 4px solid #3498db;
+}
+
+.form-group h3 {
+    color: #2c3e50;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* フォーム要素 */
+.form-row {
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-row input:required:invalid {
+    border-color: #e74c3c;
+}
+
+.form-row input:required:valid {
+    border-color: #27ae60;
+}
+
+/* チェックボックスグループ */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .checkbox-group {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: white;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.checkbox-item:hover {
+    background-color: #f8f9fa;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.checkbox-item label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+/* ボタン */
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 0 10px 10px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #7f8c8d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(149, 165, 166, 0.3);
+}
+
+.btn-preview {
+    background-color: #f39c12;
+    color: white;
+}
+
+.btn-preview:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(243, 156, 18, 0.3);
+}
+
+.btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* プレビューセクション */
+.preview-section {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.preview-section h2 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #27ae60;
+    padding-bottom: 10px;
+}
+
+/* 証明書プレビュー */
+.certificate-preview {
+    background: white;
+    border: 2px solid #ddd;
+    padding: 40px;
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.8;
+    min-height: 500px;
+}
+
+.certificate-preview h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 10px;
+}
+
+.certificate-preview .cert-header {
+    text-align: right;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.certificate-preview .cert-content {
+    margin-bottom: 30px;
+}
+
+.certificate-preview .cert-section {
+    margin-bottom: 20px;
+}
+
+.certificate-preview .cert-section h3 {
+    background-color: #f8f9fa;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #2c3e50;
+    border-left: 4px solid #3498db;
+}
+
+.certificate-preview .cert-item {
+    display: flex;
+    margin-bottom: 8px;
+    padding: 5px 0;
+}
+
+.certificate-preview .cert-label {
+    flex: 0 0 150px;
+    font-weight: bold;
+    color: #555;
+}
+
+.certificate-preview .cert-value {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.certificate-preview .cert-footer {
+    margin-top: 40px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header {
+        padding: 20px;
+    }
+    
+    .header h1 {
+        font-size: 22px;
+    }
+    
+    .form-section,
+    .preview-section {
+        padding: 20px;
+    }
+    
+    .form-group {
+        padding: 15px;
+    }
+    
+    .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .certificate-preview {
+        padding: 20px;
+        font-size: 12px;
+    }
+    
+    .certificate-preview .cert-item {
+        flex-direction: column;
+    }
+    
+    .certificate-preview .cert-label {
+        flex: none;
+        margin-bottom: 5px;
+    }
+    
+    .certificate-preview .cert-value {
+        padding-left: 0;
+    }
+}
+
+/* 印刷用スタイル */
+@media print {
+    body {
+        background: white;
+        font-size: 12px;
+    }
+    
+    .header,
+    .form-section,
+    .preview-section h2,
+    .form-actions {
+        display: none;
+    }
+    
+    .certificate-preview {
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .main-content {
+        display: block;
+    }
+    
+    .preview-section {
+        padding: 0;
+        box-shadow: none;
+    }
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.preview-section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* フォーカス表示の改善 */
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* エラー表示 */
+.error {
+    border-color: #e74c3c !important;
+    background-color: #fdf2f2;
+}
+
+/* 編集機能のスタイル */
+.preview-actions {
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #ecf0f1;
+}
+
+.preview-actions .btn {
+    margin: 0 10px;
+}
+
+.edit-section {
+    background: white;
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.edit-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.edit-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.certificate-editor {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    background-color: #fdfdfd;
+    resize: vertical;
+    min-height: 400px;
+    box-sizing: border-box;
+}
+
+.certificate-editor:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.edit-actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.edit-actions .btn {
+    margin: 0 10px;
+}
+
+/* プレビューとPDFボタンの調整 */
+#pdfBtn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .preview-actions .btn,
+    .edit-actions .btn {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .certificate-editor {
+        min-height: 300px;
+    }
+    
+    .edit-section,
+    .preview-actions {
+        display: none !important;
+    }
+    
+    .preview-section .preview-actions {
+        display: block !important;
+    }
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}

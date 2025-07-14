@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防犯機器 修理不能証明書</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>防犯機器 修理不能証明書</h1>
+            <p class="subtitle">落雷等による損傷機器の修理不能証明書を作成</p>
+        </header>
+
+        <main class="main-content">
+            <div class="form-section">
+                <h2>機器損傷情報入力</h2>
+                
+                <form id="damageForm" class="damage-form">
+                    <!-- 基本情報 -->
+                    <section class="form-group">
+                        <h3>基本情報</h3>
+                        <div class="form-row">
+                            <label for="incidentDate">事故発生日:</label>
+                            <input type="date" id="incidentDate" name="incidentDate" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="equipmentName">機器名称:</label>
+                            <select id="equipmentName" name="equipmentName" required>
+                                <option value="">— 選択してください —</option>
+                                <option value="防犯カメラ">防犯カメラ</option>
+                                <option value="デジタルレコーダー">デジタルレコーダー</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+                        <div class="form-row" id="otherEquipmentRow" style="display: none;">
+                            <label for="otherEquipment">機器名称の詳細:</label>
+                            <input type="text" id="otherEquipment" name="otherEquipment" placeholder="具体的な機器名を入力してください">
+                        </div>
+                        <div class="form-row">
+                            <label for="equipmentModel">品番:</label>
+                            <input type="text" id="equipmentModel" name="equipmentModel" placeholder="例: ABC-2000">
+                        </div>
+                        <div class="form-row">
+                            <label for="equipmentNumber">S/N:</label>
+                            <input type="text" id="equipmentNumber" name="equipmentNumber" placeholder="例: 123456789">
+                        </div>
+                    </section>
+
+                    <!-- 損傷部位選択 -->
+                    <section class="form-group">
+                        <h3>損傷部位</h3>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="part1" name="damagedParts" value="本体基板">
+                                <label for="part1">本体基板</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="part2" name="damagedParts" value="電源部">
+                                <label for="part2">電源部</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="part3" name="damagedParts" value="映像出力端子">
+                                <label for="part3">映像出力端子</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="part4" name="damagedParts" value="ネットワーク端子">
+                                <label for="part4">ネットワーク端子</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="part5" name="damagedParts" value="レンズ部">
+                                <label for="part5">レンズ部</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="part6" name="damagedParts" value="ハードディスク">
+                                <label for="part6">ハードディスク</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="part7" name="damagedParts" value="制御基板">
+                                <label for="part7">制御基板</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="part8" name="damagedParts" value="筐体">
+                                <label for="part8">筐体</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="part9" name="damagedParts" value="その他">
+                                <label for="part9">その他</label>
+                            </div>
+                        </div>
+                        <div class="form-row" id="otherPartRow" style="display: none;">
+                            <label for="otherDamagedPart">その他の損傷箇所:</label>
+                            <input type="text" id="otherDamagedPart" name="otherDamagedPart" placeholder="具体的な損傷箇所を記入">
+                        </div>
+                    </section>
+
+                    <!-- 故障症状選択 -->
+                    <section class="form-group">
+                        <h3>故障症状</h3>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="symptom1" name="symptoms" value="電源が入らない">
+                                <label for="symptom1">電源が入らない</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="symptom2" name="symptoms" value="映像が出力されない">
+                                <label for="symptom2">映像が出力されない</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="symptom3" name="symptoms" value="録画機能が動作しない">
+                                <label for="symptom3">録画機能が動作しない</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="symptom4" name="symptoms" value="ネットワーク接続ができない">
+                                <label for="symptom4">ネットワーク接続ができない</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="symptom5" name="symptoms" value="異常な発熱">
+                                <label for="symptom5">異常な発熱</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="symptom6" name="symptoms" value="煙の発生">
+                                <label for="symptom6">煙の発生</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="symptom7" name="symptoms" value="焦臭い臭い">
+                                <label for="symptom7">焦臭い臭い</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="symptom8" name="symptoms" value="物理的な破損・変形">
+                                <label for="symptom8">物理的な破損・変形</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label for="additionalSymptoms">その他の症状:</label>
+                            <textarea id="additionalSymptoms" name="additionalSymptoms" rows="3" placeholder="上記以外の症状があれば記載してください"></textarea>
+                        </div>
+                    </section>
+
+                    <!-- 損傷原因 -->
+                    <section class="form-group">
+                        <h3>損傷原因</h3>
+                        <div class="form-row">
+                            <label for="damageCause">原因:</label>
+                            <select id="damageCause" name="damageCause" required>
+                                <option value="">-- 選択してください --</option>
+                                <option value="落雷による電気的損傷">落雷による電気的損傷</option>
+                                <option value="雷サージによる過電圧">雷サージによる過電圧</option>
+                                <option value="停電による電源異常">停電による電源異常</option>
+                                <option value="その他自然災害">その他自然災害</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <!-- 発行者情報 -->
+                    <section class="form-group">
+                        <h3>発行者</h3>
+                        <div class="form-row">
+                            <label for="issuer">発行者:</label>
+                            <select id="issuer" name="issuer" required>
+                                <option value="">-- 選択してください --</option>
+                                <option value="株式会社トキワシステム">株式会社トキワシステム</option>
+                                <option value="常盤警備保障株式会社">常盤警備保障株式会社</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+                        <div class="form-row" id="otherIssuerRow" style="display: none;">
+                            <label for="otherIssuer">その他の発行者:</label>
+                            <input type="text" id="otherIssuer" name="otherIssuer" placeholder="発行者名を入力してください">
+                        </div>
+                    </section>
+
+                    <!-- 修理診断 -->
+                    <section class="form-group">
+                        <h3>修理診断</h3>
+                        <div class="form-row">
+                            <label for="repairability">修理可能性:</label>
+                            <select id="repairability" name="repairability" required>
+                                <option value="">-- 選択してください --</option>
+                                <option value="修理不能（部品調達不可）">修理不能（部品調達不可）</option>
+                                <option value="修理不能（技術的理由）">修理不能（技術的理由）</option>
+                                <option value="修理不能（経済的理由）">修理不能（経済的理由）</option>
+                                <option value="修理不能（安全上の理由）">修理不能（安全上の理由）</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="repairNotes">備考・詳細:</label>
+                            <textarea id="repairNotes" name="repairNotes" rows="4" placeholder="修理不能の詳細理由や追加情報を記載"></textarea>
+                        </div>
+                    </section>
+
+                    <!-- アクションボタン -->
+                    <div class="form-actions">
+                        <button type="button" id="previewBtn" class="btn btn-preview">プレビュー</button>
+                        <button type="button" id="generateBtn" class="btn btn-primary">証明書生成</button>
+                        <button type="button" id="pdfBtn" class="btn btn-secondary" disabled>PDF出力</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- プレビュー・証明書表示エリア -->
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <h2>修理不能証明書 プレビュー</h2>
+                <div id="certificatePreview" class="certificate-preview">
+                    <!-- 証明書内容がここに表示される -->
+                </div>
+                <div class="preview-actions">
+                    <button type="button" id="editBtn" class="btn btn-secondary">内容を編集</button>
+                    <button type="button" id="finalPdfBtn" class="btn btn-primary">PDF出力</button>
+                </div>
+            </div>
+
+            <!-- 証明書編集エリア -->
+            <div class="edit-section" id="editSection" style="display: none;">
+                <h2>証明書内容編集</h2>
+                <div class="edit-container">
+                    <textarea id="certificateEditor" class="certificate-editor" rows="25" placeholder="証明書の内容を編集してください"></textarea>
+                    <div class="edit-actions">
+                        <button type="button" id="updatePreviewBtn" class="btn btn-primary">プレビュー更新</button>
+                        <button type="button" id="cancelEditBtn" class="btn btn-secondary">編集キャンセル</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
